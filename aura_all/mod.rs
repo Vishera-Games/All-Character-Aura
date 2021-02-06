@@ -57,7 +57,7 @@ pub fn once_per_fighter_frame(fighter: &mut L2CFighterCommon) {
 		if DamageModule::damage(module_accessor, 0) > 65.0 { //IF YOUR DAMAGE IS BIGGER THAN 65
 			_TIME_COUNTER[entry_id] += 1; //GFX TIMER STARTS COUNTING
 			if DamageModule::damage(module_accessor, 0) > 225.0 { //If damage is greater than 225
-				gfxsize[entry_id] = maxgfxsize[entry_id]; //This 225.0 is the percentage you will reach your max aura. I set the gfx to stop scaling beyond this and just use their flat max values
+				gfxsize[entry_id] = maxgfxsize[entry_id]; //This 225.0 is the percentage that the aura gfx will stop scaling at. It will just use flat values beyond this point
 			}
 			if DamageModule::damage(module_accessor, 0) < 225.0 { //If your damage is less than 225
 				gfxsize[entry_id] = DamageModule::damage(module_accessor, 0) * (maxgfxsize[entry_id] / 225.0); //Applies the scaling formula to your gfx. It's simply just the max size divided by the total scale window for percentage (0% - 225%) and then multiplied by your current percentage
